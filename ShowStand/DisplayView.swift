@@ -23,6 +23,9 @@ struct DisplayView: View {
             .sheet(isPresented: $showForm) {
                 VisitorFormView(booth: booth)
             }
+            .onAppear {
+                if DemoBooth.opensForm { showForm = true }
+            }
             .onReceive(driftTimer) { _ in
                 withAnimation(.easeInOut(duration: 20)) { drift = nextDrift() }
             }

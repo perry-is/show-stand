@@ -24,6 +24,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 /// keep-awake, orientation lock, and re-locking the vendor area.
 struct RootView: View {
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.modelContext) private var modelContext
     @Query(sort: \Booth.createdAt) private var booths: [Booth]
     @State private var vendorOpen = false
 
@@ -39,6 +40,8 @@ struct RootView: View {
             }
         }
         .onAppear {
+            DemoBooth.seedIfRequested(modelContext)
+            if DemoBooth.opensVendor { vendorOpen = true }
             ActivityTracker.install()
             refresh()
         }

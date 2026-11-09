@@ -49,6 +49,16 @@
             ReferencedContainer = "container:ShowStand.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument argument = "-demo" isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument argument = "-demoForm" isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument argument = "-demoVendor" isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument argument = "-demoTheme clean" isEnabled = "NO">
+         </CommandLineArgument>
+      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
